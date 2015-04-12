@@ -17,4 +17,4 @@ app.on('start', function () {
   }
 });
 
-module.exports = function () { return app };
+module.exports = function () { return app; };
