@@ -8,12 +8,17 @@
     "express": "^4.12.3",
     "kraken-js": "^1.0.5"
   },
+  "devDependencies": {
+    "supertest": "^0.15.0",
+    "tape": "^4.0.0"
+  },
   "scripts": {
     "whitelist": "NODE_ENV=whitelist npm start",
     "blacklist": "NODE_ENV=blacklist npm start",
     "subapp": "NODE_ENV=subapp npm start",
     "subapp-standalone": "node sub",
-    "start": "node ."
+    "start": "node .",
+    "test": "node test"
   },
   "author": "Jean-Charles Sisk <jeancharles@paypal.com>",
   "license": "ISC"
