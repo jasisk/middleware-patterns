@@ -1,0 +1,22 @@
+{
+  "middleware": {
+    "auth": {
+      "enabled": true,
+      "priority": 119, // just before the built-in router
+      "route": "/auth",
+      "module": {
+        "name": "path:./lib/auth",
+        "arguments": [ "admin", "password" ]
+      }
+    },
+    "auth-router": {
+      "enabled": true,
+      "priority": 121, // just after the build-in router
+      "route": "/auth",
+      "module": {
+        "name": "express-enrouten",
+        "arguments": [{ "index": "path:./routes/auth" }]
+      }
+    }
+  }  
+}

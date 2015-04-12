@@ -1,0 +1,20 @@
+{
+  "name": "middleware-patterns",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "basic-auth": "^1.0.0",
+    "express": "^4.12.3",
+    "kraken-js": "^1.0.5"
+  },
+  "scripts": {
+    "whitelist": "NODE_ENV=whitelist npm start",
+    "blacklist": "NODE_ENV=blacklist npm start",
+    "subapp": "NODE_ENV=subapp npm start",
+    "subapp-standalone": "node sub",
+    "start": "node ."
+  },
+  "author": "Jean-Charles Sisk <jeancharles@paypal.com>",
+  "license": "ISC"
+}

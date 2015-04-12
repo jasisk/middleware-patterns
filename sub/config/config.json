@@ -1,0 +1,18 @@
+{
+  "middleware": {
+    "iuth": {
+      "enabled": true,
+      "priority": 119, // just before the built-in router
+      "module": {
+        "name": "path:../lib/auth",
+        "arguments": [ "admin", "password" ]
+      }
+    },
+    "router": {
+      "module": {
+        "name": "express-enrouten",
+        "arguments": [ { "index": "path:../routes/auth" } ]
+      }  
+    }  
+  }
+}

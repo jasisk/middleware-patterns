@@ -1,0 +1,10 @@
+{
+  "middleware": {
+    "sub-app": {
+      "enabled": true,
+      "priority": 121,
+      "route": "/auth",
+      "module": "path:./sub"
+    }
+  }  
+}
