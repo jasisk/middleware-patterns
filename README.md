@@ -25,7 +25,7 @@ If you use the blacklist pattern, verify the generated regex is what you want. Y
 
 The subapp pattern involves [writing a standalone application](https://github.com/jasisk/middleware-patterns/tree/ab4008845497d9f428a32f86f2231d0f7f1e81b4/sub) which works the way you like (e.g, with specific middleware), and then [mounting that application into a parent application](https://github.com/jasisk/middleware-patterns/blob/ab4008845497d9f428a32f86f2231d0f7f1e81b4/config/subapp.json#L6). Each app will have its own set of rendering engines, configs, routes, etc.
 
-One thing to note is that the sub-appliation must [expose its `app` instance by exporting it](https://github.com/jasisk/middleware-patterns/blob/ab4008845497d9f428a32f86f2231d0f7f1e81b4/sub/index.js#L20) and should only [`listen` when it is running standalone](https://github.com/jasisk/middleware-patterns/blob/ab4008845497d9f428a32f86f2231d0f7f1e81b4/sub/index.js#L11-L14).
+One thing to note is that the sub-application must [expose its `app` instance by exporting it](https://github.com/jasisk/middleware-patterns/blob/ab4008845497d9f428a32f86f2231d0f7f1e81b4/sub/index.js#L20) and should only [`listen` when it is running standalone](https://github.com/jasisk/middleware-patterns/blob/ab4008845497d9f428a32f86f2231d0f7f1e81b4/sub/index.js#L11-L14).
 
 See a working example by running `npm run subapp`  
 Confirm things work standlone by running `npm run subapp-standalone`
