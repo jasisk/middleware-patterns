@@ -8,13 +8,13 @@
 
 The whitelist pattern is for middleware that is intended to run on one or more paths, defined explicitly.
 
-The simplist case is when a middleware is intended to be run on any routes with the same starting path (e.g., `/auth` or `/secret/bat/cave`). In this case, [simply define a `route` in your meddleware config with that namespace](/jasisk/middleware-patterns/blob/ab4008845497d9f428a32f86f2231d0f7f1e81b4/config/whitelist.json#L6).
+The simplist case is when a middleware is intended to be run on any routes with the same starting path (e.g., `/auth` or `/secret/bat/cave`). In this case, [simply define a `route` in your meddleware config with that namespace](https://github.com/jasisk/middleware-patterns/blob/ab4008845497d9f428a32f86f2231d0f7f1e81b4/config/whitelist.json#L6).
 
 See a working example by running `npm run whitelist`
 
 ## blacklist pattern
 
-The blacklist pattern relies on the way express builds its route-map, internally. Each route you define is converted to an equivalent RegExp by means of the [`path-to-regexp` module](https://github.com/pillarjs/path-to-regexp). We can exploit this fact to build [a route with one or more negative lookaheads](/jasisk/middleware-patterns/blob/ab4008845497d9f428a32f86f2231d0f7f1e81b4/config/blacklist.json#L6).
+The blacklist pattern relies on the way express builds its route-map, internally. Each route you define is converted to an equivalent RegExp by means of the [`path-to-regexp` module](https://github.com/pillarjs/path-to-regexp). We can exploit this fact to build [a route with one or more negative lookaheads](https://github.com/jasisk/middleware-patterns/blob/ab4008845497d9f428a32f86f2231d0f7f1e81b4/config/blacklist.json#L6).
 
 See a working example by running `npm run blacklist`
 
@@ -23,9 +23,9 @@ If you use the blacklist pattern, verify the generated regex is what you want. Y
 
 ## subapp pattern
 
-The subapp pattern involves [writing a standalone application](/jasisk/middleware-patterns/tree/ab4008845497d9f428a32f86f2231d0f7f1e81b4/sub) which works the way you like (e.g, with specific middleware), and then [mounting that application into a parent application](/jasisk/middleware-patterns/blob/ab4008845497d9f428a32f86f2231d0f7f1e81b4/config/subapp.json#L6). Each app will have its own set of rendering engines, configs, routes, etc.
+The subapp pattern involves [writing a standalone application](https://github.com/jasisk/middleware-patterns/tree/ab4008845497d9f428a32f86f2231d0f7f1e81b4/sub) which works the way you like (e.g, with specific middleware), and then [mounting that application into a parent application](https://github.com/jasisk/middleware-patterns/blob/ab4008845497d9f428a32f86f2231d0f7f1e81b4/config/subapp.json#L6). Each app will have its own set of rendering engines, configs, routes, etc.
 
-One thing to note is that the sub-appliation must [expose its `app` instance by exporting it](/jasisk/middleware-patterns/blob/ab4008845497d9f428a32f86f2231d0f7f1e81b4/sub/index.js#L20) and should only [`listen` when it is running standalone](/jasisk/middleware-patterns/blob/ab4008845497d9f428a32f86f2231d0f7f1e81b4/sub/index.js#L11-L14).
+One thing to note is that the sub-appliation must [expose its `app` instance by exporting it](https://github.com/jasisk/middleware-patterns/blob/ab4008845497d9f428a32f86f2231d0f7f1e81b4/sub/index.js#L20) and should only [`listen` when it is running standalone](https://github.com/jasisk/middleware-patterns/blob/ab4008845497d9f428a32f86f2231d0f7f1e81b4/sub/index.js#L11-L14).
 
 See a working example by running `npm run subapp`  
 Confirm things work standlone by running `npm run subapp-standalone`
